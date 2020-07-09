@@ -40,11 +40,6 @@ export default {
     }
   },
   methods: {
-     getRandChar(){
-       let arr = [0,7]
-       let rand = Math.floor(Math.random() * arr.length);
-       alert(text)
-    },
     alertMsg(text){
         alert(text)
     }
