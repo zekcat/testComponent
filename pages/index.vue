@@ -17,7 +17,9 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-          <Bbutton name="Alert" @alerter="getMessage"/>
+          <Bbutton name="Alert" @clicked="alertMsg(Math.floor(Math.random() * 100) + 1)"/>
+          <Bbutton name="Alert" @clicked="alertMsg(Math.floor(Math.random() * 100) + 1)"/>
+          <Bbutton name="Alert" @clicked="alertMsg(count++)"/>
       </div>
     </div>
   </section>
@@ -32,9 +34,19 @@ export default {
     AppLogo,
     Bbutton,
   },
+  data() {
+    return {
+      count: 0
+    }
+  },
   methods: {
-    getMessage(){
-        alert("Hallo")
+     getRandChar(){
+       let arr = [0,7]
+       let rand = Math.floor(Math.random() * arr.length);
+       alert(text)
+    },
+    alertMsg(text){
+        alert(text)
     }
 }
 }

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <button @click="getMessage" class="btn-color">{{name}}</button>
+    <button @click="getMessage" class="btn">{{name}}</button>
 </div>
 </template>
 
@@ -15,14 +15,14 @@ props: {
 },
 methods: {
     getMessage(){
-        this.$emit("alerter")
+        this.$emit("clicked")
     }
 }
 }
 </script>
 
 <style scoped>
-.btn-color{
+.btn{
     width: 100px;
     height: 40px;
     margin-top: 10px;
