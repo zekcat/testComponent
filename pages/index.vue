@@ -17,9 +17,9 @@
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey">GitHub</a>
-          <Bbutton name="Alert" @clicked="alertMsg(Math.floor(Math.random() * 100) + 1)"/>
-          <Bbutton name="Alert" @clicked="alertMsg(Math.floor(Math.random() * 100) + 1)"/>
-          <Bbutton name="Alert" @clicked="alertMsg(count++)"/>
+          <Bbutton name="Random Number"/>
+          <Bbutton actionChoose="2" name="Random ABC"/>
+          <Bbutton actionChoose="1" name="Counter"/>
       </div>
     </div>
   </section>
@@ -33,16 +33,7 @@ export default {
   components: {
     AppLogo,
     Bbutton,
-  },
-  data() {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    alertMsg(text){
-        alert(text)
-    }
+  }
 }
 }
 </script>
