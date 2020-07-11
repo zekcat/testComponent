@@ -10,16 +10,16 @@
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="../components/testPage1.vue"
           target="_blank"
-          class="button--green">Documentation</a>
+          class="button--green">Testing Page1</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="~/testFile.vue"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey">Testing Page2</a>
           <Bbutton name="Random Number"/>
-          <Bbutton actionChoose="2" name="Random ABC"/>
-          <Bbutton actionChoose="1" name="Counter"/>
+          <Bbutton actionChoose="randomABC" name="Random ABC"/>
+          <Bbutton actionChoose="Counter" name="Counter"/>
       </div>
     </div>
   </section>

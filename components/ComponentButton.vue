@@ -1,5 +1,5 @@
 <template>
-<div>
+<div >
     <button @click="getMessage" class="btn">{{name}}</button>
 </div>
 </template>
@@ -10,34 +10,44 @@ export default {
 props: {
     name:{
       type: String,
-      required: String,
+      required: true,
     },
     actionChoose:{
       type: String,
-      default: "0",
+      default: "randomNumber",
     }
     
 },
 data() {
     return {
       count: 0,
-      asciiKeys: [65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,
-      85,86,87,88,89,90,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,
-      112,113,114,115,116,117,118,119,120,121,122]
+      asciiKeys: [],
+      init: true
     }
   },
+
 methods: {
     getMessage(){
         switch(this.actionChoose){
-            case "0": alert((Math.floor(Math.random() * 100) + 1))
+            case "randomNumber": alert((Math.floor(Math.random() * 100) + 1))
             break
-            case "1": alert(++this.count)
+            case "Counter": alert(++this.count)
             break
-            case "2": alert(String.fromCharCode(this.asciiKeys[Math.floor(Math.random() *this.asciiKeys.length)]))
+            case "randomABC": 
+            this.init?this.initArray():false,
+            alert(String.fromCharCode(this.asciiKeys[Math.floor(Math.random() *this.asciiKeys.length)]))
             break
         }
         
-
+    },
+    initArray() {
+      for(let i=65;i<=122;i++){
+       if(i<91||i>96){
+         this.asciiKeys.push(i)
+         }
+      }
+      this.init=false
+      // `this` указывает на экземпляр vm
     }
 }
 }
