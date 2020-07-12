@@ -9,32 +9,29 @@
         hrllo
       </h2>
       <div class="links">
-        <a
-          href="../components/testPage1.vue"
-          target="_blank"
-          class="button--green">Testing Page1</a>
-        <a
-          href="~/testFile.vue"
-          target="_blank"
-          class="button--grey">Testing Page2</a>
-          <Bbutton name="Random Number"/>
-          <Bbutton actionChoose="randomABC" name="Random ABC"/>
-          <Bbutton actionChoose="Counter" name="Counter"/>
+          <Bbutton name="Random Number" @clicked="alertMsg"/>
+          <Bbutton actionChoose="randomABC" name="Random ABC" @clicked="alertMsg"/>
+          <Bbutton actionChoose="Counter" name="Counter" @clicked="alertMsg"/>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-import Bbutton from '../components/ComponentButton.vue'
+import AppLogo from '../components/AppLogo.vue';
+import Bbutton from '../components/ComponentButton.vue';
 
 export default {
   components: {
     AppLogo,
     Bbutton,
-  }
-}
+  },
+  methods: {
+    alertMsg(text) {
+      alert(text);
+    },
+  },
+};
 
 </script>
 <style>
@@ -47,7 +44,10 @@ export default {
 }
 
 .title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+  font-family: "Quicksand", "Source Sans Pro",
+  -apple-system, BlinkMacSystemFont,
+   "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif; /* 1 */
   display: block;
   font-weight: 300;
   font-size: 100px;
@@ -67,4 +67,3 @@ export default {
   padding-top: 15px;
 }
 </style>
-
