@@ -13,22 +13,43 @@
           <Bbutton actionChoose="randomABC" name="Random ABC" @clicked="alertMsg"/>
           <Bbutton actionChoose="Counter" name="Counter" @clicked="alertMsg"/>
       </div>
+      <br>
+      <hr>
+      <h1>Task2</h1>
+      <input v-model="someText" type="text" placeholder="Введите текст"/>
+      <input v-model="number" type="number" placeholder="Введите число"/>
+      <p>Введенное сообщение : {{ someText }}</p>
+      <p>Введенное число = {{number}}</p>
+      <Reactiv :reversedMessage= "someText" :numberer= "number" @resulter="newZnach"/>
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '../components/AppLogo.vue';
+import Reactiv from '../components/ReactiveReverse.vue';
 import Bbutton from '../components/ComponentButton.vue';
 
 export default {
   components: {
     AppLogo,
     Bbutton,
+    Reactiv,
+  },
+  data() {
+    return {
+      someText: '',
+      number: null,
+    };
   },
   methods: {
     alertMsg(text) {
       alert(text);
+    },
+    newZnach(numberer, reversedMessage) {
+      this.someText = reversedMessage;
+      this.number = numberer;
+      // alert(reversedMessage + numberer);
     },
   },
 };
