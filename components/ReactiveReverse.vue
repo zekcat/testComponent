@@ -1,7 +1,8 @@
 <template>
 <div>
-    {{reversedMessage}}
-    {{numberer}}
+  <p>Из дочернего элемента {{reversedMessage}}</p>
+  <p>Число из дочернего элемента = {{numberer}}</p>
+
     <button @click="resultMSG" class="btn">PushButton</button>
   </div>
 </template>
