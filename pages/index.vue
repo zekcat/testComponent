@@ -20,7 +20,8 @@
       <input v-model="number" type="number" placeholder="Введите число"/>
       <p>Введенное сообщение : {{ someText }}</p>
       <p>Введенное число = {{number}}</p>
-      <Reactiv :reversedMessage= "someText" :numberer= "number" @resulter="newZnach"/>
+      <Reactiv :reversedMessage= "someText" :numberer= "number"
+       @resulter="newNumber"  @resulter2="newZnach" />
     </div>
   </section>
 </template>
@@ -46,10 +47,11 @@ export default {
     alertMsg(text) {
       alert(text);
     },
-    newZnach(numberer, reversedMessage) {
+    newZnach(reversedMessage) {
       this.someText = reversedMessage;
+    },
+    newNumber(numberer) {
       this.number = numberer;
-      // alert(reversedMessage + numberer);
     },
   },
 };

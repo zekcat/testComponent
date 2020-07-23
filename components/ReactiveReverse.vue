@@ -30,7 +30,9 @@ export default {
   },
   methods: {
     resultMSG() {
-      this.$emit('resulter', this.numberDetermine, this.reverseABC);
+      // this.$emit('resulter', this.numberDetermine, this.reverseABC);
+      this.$emit('resulter', this.numberDetermine);
+      this.$emit('resulter2', this.reverseABC);
     },
 
   },
