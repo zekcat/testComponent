@@ -13,8 +13,8 @@
           <Bbutton actionChoose="randomABC" name="Random ABC" @clicked="alertMsg"/>
           <Bbutton actionChoose="Counter" name="Counter" @clicked="alertMsg"/>
       </div>
-      <br>
-      <hr>
+      <br/>
+      <hr/>
       <h1>Task2</h1>
       <input v-model="someText" type="text" placeholder="Введите текст"/>
       <input v-model="number" type="number" placeholder="Введите число"/>

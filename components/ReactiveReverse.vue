@@ -2,9 +2,13 @@
 <div>
   <p>Из дочернего элемента {{reversedMessage}}</p>
   <p>Число из дочернего элемента = {{numberer}}</p>
-
-    <button @click="resultMSG" class="btn">PushButton</button>
-  </div>
+    <button @click="returnData" class="btn">PushButton</button>
+    <hr/>
+    <br/>
+    <p>Inputs дочернего элемента</p>
+    <input type="text"  v-model="reversedMessage" @input="setInput" placeholder="Введите текст">
+    <input type="number" v-model="numberer" @input="setNumber" placeholder="Введите число">
+</div>
 </template>
 
 <script>
@@ -20,26 +24,28 @@ export default {
     },
 
   },
-  computed: {
+  methods: {
+    returnData() {
+      this.$emit('resulter', this.numberDetermine());
+      this.$emit('resulter2', this.reverseABC());
+    },
     reverseABC() {
       return this.reversedMessage.split('').reverse().join('');
     },
     numberDetermine() {
       return (this.numberer % 2) ? (-this.numberer) : this.numberer * 3;
     },
-  },
-  methods: {
-    resultMSG() {
-      // this.$emit('resulter', this.numberDetermine, this.reverseABC);
-      this.$emit('resulter', this.numberDetermine);
-      this.$emit('resulter2', this.reverseABC);
+    setInput() {
+      this.$emit('resulter2', this.reversedMessage);
+    },
+    setNumber() {
+      this.$emit('resulter', this.numberer);
     },
 
   },
 
 };
 </script>
-
 <style>
 
 </style>
