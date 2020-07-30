@@ -22,6 +22,7 @@
       <p>Введенное число = {{number}}</p>
       <Reactiv :reversedMessage= "someText" :numberer= "number"
        @resulter="newNumber"  @resulter2="newZnach" />
+
     </div>
   </section>
 </template>

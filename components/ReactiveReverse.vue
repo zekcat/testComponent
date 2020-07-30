@@ -6,8 +6,9 @@
     <hr/>
     <br/>
     <p>Inputs дочернего элемента</p>
-    <input type="text"  v-model="reversedMessage" @input="setInput" placeholder="Введите текст">
-    <input type="number" v-model="numberer" @input="setNumber" placeholder="Введите число">
+    <input type="text"  v-bind:="setInput()"
+    @input="reversedMessage=$event.target.value" placeholder="Введите текст">
+    <input type="number" v-bind:="setNumber()" @input="setNumber" placeholder="Введите число">
 </div>
 </template>
 
@@ -23,6 +24,11 @@ export default {
       required: true,
     },
 
+  },
+  computed: {
+    setInput22() {
+      return this.$emit('resulter2', this.reversedMessage);
+    },
   },
   methods: {
     returnData() {
